@@ -9,7 +9,7 @@ phases:
       - unzip terraform_1.0.5_linux_amd64.zip
       - "sudo mv /usr/local/bin"
   
-  prebuild:
+  pre_build:
     commands:
       - "terraform init"
   
@@ -17,6 +17,6 @@ phases:
     commands:
       - "terraform $TF_COMMAND -auto-approve"
   
-  postbuild:
+  post_build:
     commands:
       - echo terraform $TF_COMMAND completed on 'date'
